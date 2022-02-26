@@ -22,3 +22,9 @@ def aws_connect(request):
 
     }
     return render(request, 'aws_connect.html',context)
+
+def email_translation_service(request):
+    context = {
+
+    }
+    return render(request, 'email_translation_service.html',context)

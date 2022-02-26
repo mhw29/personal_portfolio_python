@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+    <div id="main">
+        <!-- ======= header section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+    
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Email Translation</h2>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Projects</li>
+                    <li>Email Translation</li>
+                </ol>
+            </div>
+    
+            </div>
+        </section><!-- Header Section -->
+        <section class="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>About the project</h2>
+                        <p>As the organization moved up market, the need for automated translation services became more apparent.  vMOX operates as the managed service provider for large fortune 500 organizations. 
+
+                            As part of our go to market strategy it was decided to only offer chat and email support to our customers located outside the United States.  
+                            
+                            My product team was tasked with quickly identifying a solution that would translate messages in real time and respond to emails in the customer's native language. 
+
+                        </p>
+                    </br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>My Role</h4>
+                                <ul>
+                                    <li>Solution Architect</li>
+                                    <li>Product Owner</li>
+                                    <li>Customer Advocate</li>
+                                    <li>Proof of concept implementation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Project Success Metrics</h4>
+                                <ul>
+                                    <li>English speakers must support non-english speakers text based requests</li>
+                                    <li>Translation accuracy is critical to deliver quality customer support</li>
+                                    <li>Translation should happen as close to real time as possible to meet SLA expectations</li> 
+                                </ul>
+                            </div>
+                        </div>
+                    </br>
+                        <div class="row">
+                            <h4>Proof of Concept</h4>
+                            <p>As part of our solutioning, we needed to determine the best way to implement a translation service that could integrate directly into our AWS platform. 
+                                The first step in this implement was configuring Simple Email Service (SES) to accept emails from our customer end users. Once SES was set to recieve emails from our end users
+                                we set up a rule set to route those emails to a dedicated Simple Storage Service (S3) bucket. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+    </div> 
+{% endblock %}
