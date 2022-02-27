@@ -1,12 +1,14 @@
 from multiprocessing import context
 from django.shortcuts import render
-from projects.models import Project
+from projects.models import Project, Category
 # Create your views here.
 
 def project_index(request):
     projects = Project.objects.all()
+    categories = Category.objects.all()
     context = {
-        'projects': projects
+        'projects': projects,
+        'categories': categories
     }
     return render(request, 'project_index.html', context)
 
@@ -16,15 +18,11 @@ def project_detail(request,pk):
         'project': project
     }
     return render(request, 'project_detail.html', context)
+
+# def project_detail_slug(request,slug):
+#     project = Project.objects.get(slug=slug)
+#     context = {
+#         'project': project
+#     }
+#     return render(request, 'project_detail.html', context)
     
-def aws_connect(request):
-    context = {
-
-    }
-    return render(request, 'aws_connect.html',context)
-
-def email_translation_service(request):
-    context = {
-
-    }
-    return render(request, 'email_translation_service.html',context)
