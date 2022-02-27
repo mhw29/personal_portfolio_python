@@ -21,6 +21,6 @@ urlpatterns = [
     path("projects/",include("projects.urls")),
     path("blog/", include("blog.urls")),
     path('', include("static_pages.urls")),
-    path('about', include("static_pages.urls")),
+    #path('about/', include("static_pages.urls")),
 ]
 
