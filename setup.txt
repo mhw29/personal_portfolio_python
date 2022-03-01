@@ -1,0 +1,19 @@
+sudo apt update & sudo apt upgrade
+sudo apt install python3-pip
+sudo apt-get install postgresql postgresql-contrib
+python3 -m venv env
+sudo apt install python3.8-venv
+pip install psycopg2-binary
+sudo apt install libpq-dev
+sudo apt-get install libffi-dev
+sudo apt-get install python3-dev
+sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-pil python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev libssl-dev
+sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
+sudo apt-get install python3.8-dev
+sudo apt-get install gcc
+sudo apt-get install libxml2-dev libxslt1-dev
+pip install wheel
+sudo apt-get install -y libssl-dev
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install unixodbc unixodbc-dev
+sudo apt-get install python3-tk

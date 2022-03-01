@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+SECRET_KEY = os.environ.get('APP_SECRET_KEY', 'unsafe-secret-key')
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True) == 'False')
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tuy=cq)4lt63ap^p(v$)*&s01dlf8=v!&ea$^-u6oka51zm0b#'
+#SECRET_KEY = 'django-insecure-tuy=cq)4lt63ap^p(v$)*&s01dlf8=v!&ea$^-u6oka51zm0b#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -78,17 +84,29 @@ WSGI_APPLICATION = 'mwilliamson_portfolio_python.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '',
+if os.environ.get('ENVIRONMENT', '') == '':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'portfolio',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ.get('DB_NAME', 'db.sqlite'),    
+            'USER': os.environ.get('DB_USER', ''),
+            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+            'HOST': os.environ.get('DB_HOST', None),
+            'PORT': os.environ.get('DB_PORT', None),
+            'CONN_MAX_AGE': 600,
+        }
+    }
 
 
 # Password validation
