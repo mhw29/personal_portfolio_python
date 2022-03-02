@@ -1,1 +1,1 @@
-ps auxw | grep runserver | awk '{print $2}' | xargs kill
+ps auxw | grep runserver | awk '{print $2}' | xargs killall
