@@ -17,3 +17,10 @@ sudo apt-get install -y libssl-dev
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install unixodbc unixodbc-dev
 sudo apt-get install python3-tk
+
+
+
+
+sudo python3 -m venv env
+
+python3 -m pip install -r requirements.txt
