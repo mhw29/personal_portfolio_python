@@ -17,4 +17,5 @@ apt-get install -y libssl-dev
 apt-get install libmysqlclient-dev
 apt-get install unixodbc unixodbc-dev
 apt-get install python3-tk
+apt-get install gunicorn
 #! /etc/init.d/nginx stop
