@@ -26,6 +26,23 @@ sudo python3 -m venv env
 python3 -m pip install -r requirements.txt
 
 
+https://dev.to/rmiyazaki6499/deploying-a-production-ready-django-app-on-aws-1pk3
+    [Unit]
+    Description=gunicorn daemon
+    Requires=gunicorn.socket
+    After=network.target
 
+    [Service]
+    User=djangoadmin
+    Group=www-data
+    WorkingDirectory=/var/www/personal_portfolio_python
+    ExecStart=/var/www/personal_portfolio_python/env/bin/gunicorn \
+    --access-logfile - \
+    --workers 3 \
+    --bind unix:/run/gunicorn.sock \
+    mwilliamson_portfolio_python.wsgi:application
+
+    [Install]
+    WantedBy=multi-user.target
 gunicorn --bind 0.0.0.0:8000 mwilliamson_portfolio_python.wsgi
 
